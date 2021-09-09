@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>User Profile</h1>
+    <hr>
+    <h3>My Orders</h3>
+    {{# each transactions}}
+      <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{this.name}}</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <ul class="list-group">
+            {{# each this.items}}
+              <li class="list-group-item">
+                <span class="badge">{{this.qty}}</span>
+                <h5>{{this.item.title}}</h5>
+              </li>
+            {{/each}}
+          </ul>
+        </ul>
+      </div>
+      <div class="panel-footer">
+
+      </div>
+    </div>
+    {{/ each}}
+  </div>
+</div>

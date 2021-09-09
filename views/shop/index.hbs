@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="alert alert-success{{#if noSuccess}}d-none{{/if}}" role="alert">
+      {{successMessage}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="alert alert-danger{{#if noError}}d-none{{/if}}" role="alert">
+      {{errMsg}}
+  </div>
+</div>
+
+
+<div class="row">
+    {{# each products }}
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail mg-15">
+                <img class="img-fluid" src="{{this.imagePath}}">
+                <div class="caption">
+                    <h4>{{this.title}}</h4>
+                    <p>{{this.description}}</p>
+                    <div>
+                        <div class="price pull-left">${{this.price}}</div>
+                        <a href="/add-to-cart/{{this._id}}" class="btn btn-success btn-xs pull-right" role="button">Add to card</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {{/each}}
+
+</div><!--/row-->
